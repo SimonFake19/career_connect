@@ -7,7 +7,20 @@
 
     <meta name="description" content="" />
     <title>Job Hunt</title>
-    
+    <style>
+        .slider-image {
+            
+            background-image: url("{{ asset('uploads/'.$home_page_data->background)}}");
+        }
+
+        .why-choose-image {
+            background-image: url("{{ asset('uploads/banner3.jpg') }}");
+        }
+
+        .testimonial-image {
+            background-image: url("{{ asset('uploads/banner11.jpg') }}");
+        }
+    </style>
     <link rel="icon" type="image/png" href="{{ asset('uploads/favicon.png') }}" />
 
     @include('front.layout.styles')
