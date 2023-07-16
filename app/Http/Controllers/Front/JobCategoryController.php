@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\JobCategory;
 use App\Models\PageHomeItem;
+use App\Models\PageJobCategoryItem;
 
 class JobCategoryController extends Controller
 {
@@ -15,6 +16,10 @@ class JobCategoryController extends Controller
         // return view('front.job_categories')->with([
         //     'home_page_data' => $home_page_data,
         // ]);
-        return view('front.job_categories');
+        $job_category_page_item = PageJobCategoryItem::where('id', 1)->first();
+        $job_categories = JobCategory::orderBy('name','asc')->get();
+        return view('front.job_categories',compact('job_categories', 'job_category_page_item'));
     }
+
+    
 }

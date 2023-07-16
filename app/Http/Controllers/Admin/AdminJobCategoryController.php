@@ -50,7 +50,7 @@ class AdminJobCategoryController extends Controller
 
         $obj->name = $request->name;
         $obj->icon = $request->icon;
-        $obj->save();
+        $obj->update();
 
         return redirect()->route('admin_job_category')->with('success', 'Data is updated successfully.');
 
